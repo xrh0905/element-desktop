@@ -2,7 +2,7 @@ name: Build and Test
 on:
   pull_request: {}
   push:
-    branches: [develop, master]
+    branches: [develop, master,xbuild]
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -10,7 +10,7 @@ jobs:
   fetch:
     uses: ./.github/workflows/build_prepare.yaml
     with:
-      config: ${{ github.event.pull_request.base.ref == 'develop' && 'element.io/nightly' || 'element.io/release' }}
+      config: ${{ 'xit' }}
       version: ${{ github.event.pull_request.base.ref == 'develop' && 'develop' || '' }}
 
   windows:
