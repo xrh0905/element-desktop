@@ -20,6 +20,9 @@ jobs:
               with:
                   cache: "yarn"
 
+            - name: Fetch Config
+              run: "mkdir xit;wget https://element.xrh0905.top/config.json -O xit/config.json"
+
             - name: Install Deps
               run: "yarn install --pure-lockfile"
 
